@@ -26,7 +26,7 @@ public class AppService {
         return graph.getBetterHospitalPath(request.ocurrence());
     }
 
-    public CompleteRouteResponse getCompleteRoute(){
+    public CompleteRouteResponse getCompleteRouteRandomly(){
        int ocurrenceVertex = graph.getRandomVertex();
        DijkstraResponse toOccurencePath = graph.getShortestPath(graph.getSamu(),ocurrenceVertex);
        DijkstraResponse toHospitalPath = graph.getBetterHospitalPath(ocurrenceVertex);

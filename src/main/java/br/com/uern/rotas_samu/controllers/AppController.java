@@ -38,8 +38,7 @@ public class AppController {
     }
 
     @GetMapping("/rota-completa-aleatoria")
-    public ResponseEntity<?> getBetterHospitalPath() {
-        return ResponseEntity.ok(appService.getCompleteRoute());
+    public ResponseEntity<?> getCompleteRouteRandomly() {
+        return ResponseEntity.ok(appService.getCompleteRouteRandomly());
     }
-
 }

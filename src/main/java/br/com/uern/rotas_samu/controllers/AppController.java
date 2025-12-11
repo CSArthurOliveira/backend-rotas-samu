@@ -41,4 +41,5 @@ public class AppController {
     public ResponseEntity<?> getCompleteRouteRandomly() {
         return ResponseEntity.ok(appService.getCompleteRouteRandomly());
     }
+
 }

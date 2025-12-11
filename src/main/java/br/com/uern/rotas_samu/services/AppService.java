@@ -30,6 +30,7 @@ public class AppService {
        int ocurrenceVertex = graph.getRandomVertex();
        DijkstraResponse toOccurencePath = graph.getShortestPath(graph.getSamu(),ocurrenceVertex);
        DijkstraResponse toHospitalPath = graph.getBetterHospitalPath(ocurrenceVertex);
+
        return new CompleteRouteResponse(ocurrenceVertex,toOccurencePath.path(),toOccurencePath.distance(),toHospitalPath.path()[toHospitalPath.path().length-1],
                toHospitalPath.path(),toHospitalPath.distance(),
                (toOccurencePath.executionTimeMillis() + toHospitalPath.executionTimeMillis()));
@@ -39,6 +40,7 @@ public class AppService {
         int ocurrenceVertex = request.ocurrence();
         DijkstraResponse toOccurencePath = graph.getShortestPath(graph.getSamu(),ocurrenceVertex);
         DijkstraResponse toHospitalPath = graph.getBetterHospitalPath(ocurrenceVertex);
+
         return new CompleteRouteResponse(ocurrenceVertex,toOccurencePath.path(),toOccurencePath.distance(),toHospitalPath.path()[toHospitalPath.path().length-1],
                 toHospitalPath.path(),toHospitalPath.distance(),
                 (toOccurencePath.executionTimeMillis() + toHospitalPath.executionTimeMillis()));
